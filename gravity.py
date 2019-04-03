@@ -1,28 +1,23 @@
 #CALCULADORA GRAVITACIONAL
 def a():
    k = (6.7/(10**11))
-   g = (k*m)/(r**2)
-   return g
+   return (k*m)/(r**2)
 def b():
    k = (6.7/(10**11))
-   f = (k*m1*m2)/(r**2)
-   return f
+   return (k*m1*m2)/(r**2)
 def c():
    r = ((6.37)*(10**6))
    m = ( 5.98*(10**24))
    k = (6.7/(10**11))
-   v = ((k*m)/((r+h)**2))**1/2
-   return v
+   return ((k*m)/((r+h)**2))**1/2
 def d():
 	  r = ((6.37)*(10**6))
 	  k = (6.7/(10**11))
 	  m = ( 5.98*(10**24))
-	  t = (4*((3.14)**2)*((r+h)**3)/(k*m))**1/2
-	  return t
+	  return (4*((3.14)**2)*((r+h)**3)/(k*m))**1/2
 def e():
 	  k = (6.7/(10**11))
-	  v = (2*k*m/r)**1/2
-	  return v
+	  return (2*k*m/r)**1/2
 print("""CALCULADORA GRAVITACIONAL:
           1-gravidade de um planeta
           2-força gravitacional entre
