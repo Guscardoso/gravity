@@ -1,27 +1,43 @@
-
 #CALCULADORA GRAVITACIONAL
-# k é a constante gravitacional
+# k é a constante gravitacional e f fórmula
+#rt o raio da terra e mt a massa da terra
 while True:
+ k = (6.7/(10**11))
+ rt = ((6.37)*(10**6))
+ mt = ( 5.98*(10**24))
+
  def aceleracaodagravidade():
-   k = (6.7/(10**11))
-   return (k*m)/(r**2)
+     m = int (input  ("Massa do planeta:"))
+     r = int (input  ("Raio do planeta:"))
+     f =(k*m)/(r**2)
+     return print("A aceleração é",f,"m/s^2")
+ 
  def forcagravitacional():
-   k = (6.7/(10**11))
-   return (k*m1*m2)/(r**2)
+     m1 = int (input  ("Massa 1:"))
+     m2 = int (input  ("Massa 2:"))
+     r = int (input  ("Distância entre as duas massas:"))
+     f=(k*m1*m2)/(r**2)
+     return  print("A força é de ",f,"N")
+ 
  def velocidadedesatelite():
-   r = ((6.37)*(10**6))
-   m = ( 5.98*(10**24))
-   k = (6.7/(10**11))
-   return ((k*m)/((r+h)**2))**1/2
+     print("velocidade de um satélite na órbita terrestre")
+     h = int ( input  ("Altura do do satélite :"))
+     f = ((k*mt)/((rt+h)**2))**1/2
+     return print("A velocidade é",f,"m/s e ",f*3.6,"km/h")
+
  def periodosatelite():
-	  r = ((6.37)*(10**6))
-	  k = (6.7/(10**11))
-	  m = ( 5.98*(10**24))
-	  return (4*((3.14)**2)*((r+h)**3)/(k*m))**1/2
+    h = int ( input  ("Altura do satélite:"))
+    f = (4*((3.14)**2)*((rt+h)**3)/(k*mt))**1/2
+    return print("o período é de",f,"segundos")
+
  def velocidadedeescape():
-	  k = (6.7/(10**11))
-	  return (2*k*m/r)**1/2
- print("""CALCULADORA GRAVITACIONAL:
+      m = int  ( input ("Massa do planeta:"))
+      r = int ( input  ("Raio do planeta :"))
+      f=(2*k*m/r)**1/2
+      return print  ("A velocidade de escape é ",f,"m/s ou",f*3.6,"km/h")
+	  
+ def menu():
+   print("""CALCULADORA GRAVITACIONAL:
           1-gravidade de um planeta
           2-força gravitacional entre
           dois corpos
@@ -31,28 +47,24 @@ while True:
           um planeta
           0-sair
           obs: use unidades em kg e m""")
- n = int(input ("Escolha:"))
- if n>5 or n<0:
-	  print  ("comando inválido!")
- if n==1:
-   m = int (input  ("Massa do planeta:"))
-   r = int (input  ("Raio do planeta:"))
-   print("A aceleração é",aceleracaodagravidade(),"m/s^2")
- if n==2:
-  m1 = int (input  ("Massa 1:"))
-  m2 = int (input  ("Massa 2:"))
-  r = int (input  ("Distância entre as duas massas:"))
-  print("A força é de ",forcagravitacional(),"N")
- if n==3:
-   print("velocidade de um satélite na órbita terrestre")
-   h = int ( input  ("Altura do do satélite :"))
-   print("A velocidade é",velocidadedesatelite(),"m/s e ",velocidadedesatelite()*3.6,"km/h")
- if n==4:
-   h = float  ( input  ("Altura do satélite:"))
-   print("o período é de",periodosatelite(),"segundos")
- if n==5:
-   m = int  ( input ("Massa do planeta:"))
-   r = int ( input  ("Raio do planeta :"))
-   print  ("A velocidade de escape é ",velocidadedeescape(),"m/s ou",velocidadedeescape()*3.6,"km/h")
- if n==0:
-  exit()
+   x = input("DIGITE A OPÇÃO:")
+   if x.isdigit()==False:
+    	print("USE APENAS OS NÚMEROS DA TELA PRINCIPAL")
+    	menu()
+   else:
+        n=int(x)
+        if n>5 or n<0:
+         print("comando inválido!")
+        if n==1:
+          aceleracaodagravidade()
+        if n==2:
+          forcagravitacional()
+        if n==3:
+          velocidadedesatelite()
+        if n==4:
+          periodosatelite()
+        if n==5:
+          velocidadedeescape()
+        if n==0:
+         exit()
+ menu()
